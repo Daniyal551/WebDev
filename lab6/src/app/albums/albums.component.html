@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<nav class="navv">
+    <a class="hh" routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">About</a>
+    <i id="icon"  class="fas fa-search"></i>
+    <a class="hh" routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
+    <i id="icon" class="fa fa-home" aria-hidden="true"></i>
+</nav>
+<br>
+<div style="display: flex; flex-direction: column;">
+    <div *ngFor="let item of data">
+        <div> Id: {{item.id}} </div>
+        <div> Title: <a [routerLink]="['/albums', item.id]">{{item.title}}</a> </div>
+        <div> User: {{item.userId}} </div>
+        <button type="button" (click)="delete(item)">Delete</button>
+        <hr>
+    
+    </div>
+    </div>
+<style>
+    .hh{
+        padding: 10px;
+        margin-left: 370px;
+        font-size: 30px;
+    }
+    #icon{
+        margin-left: 5px;
+    }
+</style>
+
